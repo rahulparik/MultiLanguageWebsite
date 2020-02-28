@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ग्रैस्ट्रीम | घर</title>
+    <!--<link href="Content/Site.css" rel="stylesheet" />-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="row utility-menu">
+        <div class="col-sm-12">
+            <div class="utility-inner clearfix">
+                <span class="alt-font"><i class="icon icon_mail"></i>admin@greystream.co.in</span>
+                <span class="alt-font"><i class="icon icon_phone"></i> (+91)-9930631457</span>
+
+                <div class="pull-right">
+                    <a id="register" href="nlogin.html" class="btn btn-primary btn-filled btn-xs">पंजीकरण</a>
+                </div>
+            </div>
+        </div>
+    </div><!--end of row-->
+    <p></p>
+    <select id="langselector" onchange="loadlang()">
+        <option value="hn">Hindi</option>
+        <option value="en">English</option>
+    </select>
+    <p></p>
+
+    <iframe id="contents" src="Hindi.html" width="1366" height="768" scrolling="yes">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+    <script>
+        function loadlang() {
+            var lng = document.getElementById("langselector").value;
+            var cnt = document.getElementById("contents");
+            var reg = document.getElementById("register");
+            switch (lng) {
+                case "hn":
+                    cnt.src = "Hindi.html";
+                    document.title = "ग्रैस्ट्रीम | घर";
+                    reg.innerHTML = "पंजीकरण";
+                    break;
+                case "en":                    
+                    cnt.src = "Eng.html";
+                    document.title = "Greystream | Home";
+                    reg.innerHTML = "Registration";
+                    break;
+                default:
+                    cnt.src = "Hindi.html";
+            }
+        }
+    </script>
+</body>
+</html>
